@@ -1,8 +1,6 @@
+#!/bin/bash
 
-cat /opt/telegraf.conf | envsubst > /etc/telegraf/telegraf.conf
-cat /opt/promtail.conf | envsubst > /etc/promtail/promtail.yaml
+cat /opt/telegraf/telegraf.conf > /etc/telegraf/telegraf.conf
 
 sudo service telegraf restart
-promtail -config.file=/etc/promtail/promtail.yaml
-
-echo =============== Ready ======================
+sudo promtail --config.file=/opt/promtail/promtail.yaml

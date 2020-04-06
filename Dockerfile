@@ -11,7 +11,7 @@ COPY entrypoint.sh /opt/
 RUN echo 'hosts: files dns' >> /etc/nsswitch.conf
 RUN apt-get update && \
   apt-get install -qy \
-  tzdata ca-certificates libsystemd-dev procps nano wget curl iputils-ping unzip sudo && \
+  tzdata ca-certificates libsystemd-dev procps nano wget curl iputils-ping unzip sudo gettext-base && \
   rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 WORKDIR /tmp/
