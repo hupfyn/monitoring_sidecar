@@ -23,9 +23,13 @@ The following monitoring tools present inside container
 
 ## How to run
 
-1. Build container
+1. Get container
 ```bash
    docker build -t monitoring-sidecar .
+   ```
+   or 
+```bash
+   docker pull hupfyn/monitoring_sidecar
    ```
 2. Write config files
 
