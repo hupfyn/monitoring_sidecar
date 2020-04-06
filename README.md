@@ -25,7 +25,7 @@ The next monitor tool are exist here:
 
 1. Build container
 ```bash
-   docker build -t monitoring-sidecar
+   docker build -t monitoring-sidecar .
    ```
 2. Write config files
 
