@@ -37,7 +37,7 @@ The following monitoring tools present inside container
 **Note:** There are you can see examples of [telegraf](./Telegraf.md) and [promtail](./Promtail.md) config files
 
 
-3. To execute following command for starting container
+3. Execute following command for starting container
 
 ```bash
    docker run -d --name monitoring-sidecar /
