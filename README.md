@@ -1,16 +1,16 @@
 # Sidecar monitoring container
-The next monitor tool are exist here:
+The following monitoring tools present inside container
 - telegraf 1.13.4 (metric agent)
 - promtail 1.4.0  (log scraper agent)
 
 ## Config required
 
-- path for telegraf:
+- path to telegraf:
 
 ```bash
    /opt/telegraf/telegraf.conf
 ```
-- path for promtail:
+- path to promtail:
 
 ```bash
    /opt/promtail/promtail.yaml
@@ -23,17 +23,21 @@ The next monitor tool are exist here:
 
 ## How to run
 
-1. Build container
+1. Get container
 ```bash
-   docker build -t monitoring-sidecar
+   docker build -t monitoring-sidecar .
+   ```
+   or 
+```bash
+   docker pull hupfyn/monitoring_sidecar
    ```
 2. Write config files
 
 
-**Note:** You can see example of [telegraf](./Telegraf.md) and [promtail](./Promtail.md)
+**Note:** There are you can see examples of [telegraf](./Telegraf.md) and [promtail](./Promtail.md) config files
 
 
-3. Execute using following comand
+3. Execute following command for starting container
 
 ```bash
    docker run -d --name monitoring-sidecar /
