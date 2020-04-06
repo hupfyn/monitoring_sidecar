@@ -5,12 +5,12 @@ The next monitor tool are exist here:
 
 ## Config required
 
-- path for telegraf:
+- path to telegraf:
 
 ```bash
    /opt/telegraf/telegraf.conf
 ```
-- path for promtail:
+- path to promtail:
 
 ```bash
    /opt/promtail/promtail.yaml
