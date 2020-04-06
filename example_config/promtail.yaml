@@ -1,0 +1,29 @@
+server:
+    http_listen_port: 9080
+    grpc_listen_port: 0
+  positions:
+    filename: /tmp/positions.yaml
+  clients:
+    - url: "http://your_loki:3100/loki/api/v1/push"
+  scrape_configs:
+    - job_name: app-logs
+      entry_parser: raw
+      static_configs:
+        # Configures the discovery to look on the current machine. Must be either
+        # localhost or the hostname of the current computer.
+      - targets:
+          - localhost
+        # Defines a file to scrape and an optional set of additional labels to apply to
+        # all streams defined by the files from __path__.
+        labels:
+            __path__: /opt/log/app/application.log.*
+            # Additional labels to assign to the logs
+            job: application-runtime
+    - job_name: nginx
+      entry_parser: raw
+      static_configs:
+      - targets:
+          - localhost
+        labels:
+          job: nginx-proxy
+          __path__: /opt/log/nginx/*log
