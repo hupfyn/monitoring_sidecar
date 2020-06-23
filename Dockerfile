@@ -19,7 +19,8 @@ WORKDIR /tmp/
 
 # Setup Telegraf
 RUN wget --no-verbose https://dl.influxdata.com/telegraf/releases/telegraf_${TELEGRAF_VERSION}-1_amd64.deb && \
-    dpkg -i telegraf_${TELEGRAF_VERSION}-1_amd64.deb
+    dpkg -i telegraf_${TELEGRAF_VERSION}-1_amd64.deb \
+    rm -rf telegraf_1.13.4-1_amd64.deb
 
 # Setup Promtail
 RUN wget --no-verbose https://github.com/grafana/loki/releases/download/v${PROMTAIL_VERSION}/promtail-linux-amd64.zip && \
